@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="{{asset('admin/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css')}}">
 <link rel="stylesheet" href="{{asset('admin/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css')}}">
 <link rel="stylesheet" href="{{asset('admin/vendor/libs/select2/select2.css')}}" />
+<link rel="stylesheet" href="{{asset('admin/vendor/libs/sweetalert2/sweetalert2.css')}}" />
 <link rel="stylesheet" href="{{asset('admin/vendor/libs/formvalidation/formValidation.min.css')}}" />
 @endsection
 
@@ -125,6 +126,7 @@
 <script src="{{ asset('admin/vendor/libs/datatables-buttons/buttons.html5.js')}}"></script>
 <script src="{{ asset('admin/vendor/libs/datatables-buttons/buttons.print.js')}}"></script>
 <script src="{{ asset('admin/vendor/libs/select2/select2.js')}}"></script>
+<script src="{{ asset('admin/vendor/libs/sweetalert2/sweetalert2.js')}}"></script>
 <script src="{{ asset('admin/vendor/js/natural.js')}}"></script>
 <script src="{{ asset('admin/js/page/admin.js') }}"></script>
 <script src="{{ asset('admin/js/page/add-new-admin.js') }}"></script>

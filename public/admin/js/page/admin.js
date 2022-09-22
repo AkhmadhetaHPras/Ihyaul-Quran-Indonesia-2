@@ -1,5 +1,5 @@
 $(function () {
-  var a,
+  let a,
     e = $(".datatables-users").DataTable({
       ajax: "/admin/admin",
       columns: [
@@ -37,7 +37,7 @@ $(function () {
         {
           targets: 1,
           render: function (a, e, t, s) {
-            var n = t.name,
+            let n = t.name,
               l = t.username,
               r = t.photo;
             return (
@@ -185,13 +185,46 @@ $(function () {
     });
   $(".datatables-users tbody").on("click", ".delete-record", function () {
     // e.row($(this).parents("tr")).remove().draw();
-    var dt = e.row($(this).parents("tr"));
-    var id = $(this)
+    let dt = e.row($(this).parents("tr"));
+    let id = $(this)
       .parents("tr")
       .children(".tdid")
       .children(".id")
       .attr("data-bs-id");
-    deleteitem(id, dt);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert user!",
+      icon: "warning",
+      showCancelButton: !0,
+      confirmButtonText: "Yes, Suspend user!",
+      customClass: {
+        confirmButton: "btn btn-primary me-2",
+        cancelButton: "btn btn-label-secondary",
+      },
+      buttonsStyling: !1,
+    }).then(function (n) {
+      if (n.value) {
+        deleteitem(id, dt);
+        Swal.fire({
+          icon: "success",
+          title: "Suspended!",
+          text: "User has been suspended.",
+          customClass: {
+            confirmButton: "btn btn-success",
+          },
+        });
+      } else {
+        n.dismiss === Swal.DismissReason.cancel &&
+          Swal.fire({
+            title: "Cancelled",
+            text: "Cancelled Suspension :)",
+            icon: "error",
+            customClass: {
+              confirmButton: "btn btn-success",
+            },
+          });
+      }
+    });
   }),
     setTimeout(() => {
       $(".dataTables_filter .form-control").removeClass("form-control-sm"),
