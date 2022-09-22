@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('photo');
             $table->string('phone');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
