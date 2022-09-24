@@ -192,11 +192,11 @@ $(function () {
       .children(".id")
       .attr("data-bs-id");
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert user!",
+      title: "Apakah anda yakin?",
+      text: "Admin akan dihapus!",
       icon: "warning",
       showCancelButton: !0,
-      confirmButtonText: "Yes, Suspend user!",
+      confirmButtonText: "Hapus!",
       customClass: {
         confirmButton: "btn btn-primary me-2",
         cancelButton: "btn btn-label-secondary",
@@ -207,8 +207,8 @@ $(function () {
         deleteitem(id, dt);
         Swal.fire({
           icon: "success",
-          title: "Suspended!",
-          text: "User has been suspended.",
+          title: "Terhapus!",
+          text: "Admin berhasil dihapus",
           customClass: {
             confirmButton: "btn btn-success",
           },
@@ -216,8 +216,8 @@ $(function () {
       } else {
         n.dismiss === Swal.DismissReason.cancel &&
           Swal.fire({
-            title: "Cancelled",
-            text: "Cancelled Suspension :)",
+            title: "Dibatalkan",
+            text: "Penghapusan dibatalkan :)",
             icon: "error",
             customClass: {
               confirmButton: "btn btn-success",
@@ -233,7 +233,7 @@ $(function () {
 });
 
 function deleteitem(id, e) {
-  var i = 0;
+  let i = 0;
   $.ajaxSetup({
     headers: {
       "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),

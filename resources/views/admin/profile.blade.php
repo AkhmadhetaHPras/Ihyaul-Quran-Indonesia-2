@@ -48,11 +48,11 @@
                     <div class="fv-plugins-message-container invalid-feedback"></div>
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label for="email" class="form-label">E-mail</label>
+                    <label for="email" class="form-label">Email</label>
                     <input class="form-control" type="text" id="email" name="email" value="{{ $profile->email }}" placeholder="name@example.com">
                 </div>
                 <div class="mb-3 col-md-6">
-                    <label class="form-label" for="phone">Nomer HP</label>
+                    <label class="form-label" for="phone">No HP</label>
                     <input type="text" id="phone" name="phone" class="form-control" value="{{ $profile->phone }}" placeholder="081234567890">
                 </div>
             </div>

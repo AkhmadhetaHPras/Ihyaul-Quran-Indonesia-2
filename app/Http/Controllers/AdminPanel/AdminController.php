@@ -52,6 +52,9 @@ class AdminController extends Controller
             $filenameSimpan = $filename . '_' . time() . '.' . $extension;
             $path = $request->file('photo')->storeAs('public/img/', $filenameSimpan);
             $savepath = 'img/' . $filenameSimpan;
+        } else {
+            // tidak ada file yang diupload
+            $savepath = 'img/1.png';
         }
 
         $user = new User();
@@ -65,7 +68,7 @@ class AdminController extends Controller
 
         return response()->json([
             'status' => 200,
-            'message' => 'Profile berhasil diupdate!',
+            'message' => 'Admin berhasil dibuat!',
             'content' => $user,
         ]);
     }
@@ -111,7 +114,7 @@ class AdminController extends Controller
         }
         if ($request->file('photo')) {
             // ada file yang diupload
-            if ($user->photo && file_exists(storage_path('app/public/' . $user->photo))) {
+            if ($user->photo && file_exists(storage_path('app/public/' . $user->photo)) && $user->photo != 'img/1.png') {
                 Storage::delete('public/' . $user->photo);
             }
             $filenameWithExt = $request->file('photo')->getClientOriginalName();

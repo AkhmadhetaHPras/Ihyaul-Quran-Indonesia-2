@@ -112,8 +112,6 @@
 <script src="{{asset('admin/vendor/libs/formvalidation/formValidation.min.js')}}"></script>
 <script src="{{asset('admin/vendor/libs/formvalidation/Bootstrap5.min.js')}}"></script>
 <script src="{{asset('admin/vendor/libs/formvalidation/AutoFocus.min.js')}}"></script>
-<script src="{{ asset('js/jquery.form.js') }}"></script>
-<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('admin/vendor/libs/moment/moment.js')}}"></script>
 <script src="{{ asset('admin/vendor/libs/datatables/jquery.dataTables.js')}}"></script>
 <script src="{{ asset('admin/vendor/libs/datatables-bs5/datatables-bootstrap5.js')}}"></script>
@@ -128,6 +126,8 @@
 <script src="{{ asset('admin/vendor/libs/select2/select2.js')}}"></script>
 <script src="{{ asset('admin/vendor/libs/sweetalert2/sweetalert2.js')}}"></script>
 <script src="{{ asset('admin/vendor/js/natural.js')}}"></script>
+<script src="{{ asset('js/jquery.form.js') }}"></script>
+<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
 <script src="{{ asset('admin/js/page/admin.js') }}"></script>
 <script src="{{ asset('admin/js/page/add-new-admin.js') }}"></script>
 @endsection

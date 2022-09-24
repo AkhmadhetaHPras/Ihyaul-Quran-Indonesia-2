@@ -109,7 +109,7 @@ $(document).ready(function () {
             "password_confirmation",
             $("input#password_confirmation").val()
           );
-          var i = 0;
+          let i = 0;
           $.ajaxSetup({
             headers: {
               "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
